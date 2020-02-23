@@ -5,6 +5,15 @@
  */
 package edu.eci.arep.WebService;
 import edu.eci.arep.annotations.Web;
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStream;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -12,23 +21,58 @@ import edu.eci.arep.annotations.Web;
  */
 
 public class WebService {
+    @Web
+    public static void hmtl(String element, OutputStream clientOutput){
+        try {
+            String text = "";
+            String temp;
+            BufferedReader t = new BufferedReader(new FileReader(System.getProperty("user.dir") + element));
+            while ((temp = t.readLine()) != null) {
+                text = text + temp;
+            }
+            clientOutput.write(("HTTP/1.1 201 Found  \r\n"
+                    + "Content-Type: text/html; charset=\"utf-8\" \r\n"
+                    + "\r\n"
+                    + text).getBytes());
+        } catch (IOException e) {
+        }
+        
+    }     
     
     @Web
-    public static String hello(){
-        return 
-                "HTTP/1.1 200 OK\r\n"
-                + "Content-Type: text/html\r\n"
-                + "\r\n"
-                + "<!DOCTYPE html>\n"
-                + "<html>\n"
-                + "<head>\n"
-                + "<meta charset=\"UTF-8\">\n"
-                + "<title>Title of the document</title>\n"
-                + "</head>\n"
-                + "<body>\n"
-                + "<h1>Hello</h1>\n"
-                + "</body>\n"
-                + "</html>\n";
-    }
+    public static void jpg(String element, OutputStream clientOutput){
+        System.out.println("Entre en JPG");
+        System.out.println(element);
+        System.out.println(clientOutput);
+        try {
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir") + element));
+            ByteArrayOutputStream ArrBytes = new ByteArrayOutputStream();
+            DataOutputStream writeimg = new DataOutputStream(clientOutput);
+            ImageIO.write(image, "PNG", ArrBytes);
+            writeimg.writeBytes("HTTP/1.1 200 OK \r\n");
+            writeimg.writeBytes("Content-Type: image/png \r\n");
+            writeimg.writeBytes("\r\n");
+            writeimg.write(ArrBytes.toByteArray());
+        } catch (IOException e) {
+
+        }
+        
+    }  
     
+    @Web
+    public static void js(String element, OutputStream clientOutput){
+        try {
+            BufferedReader read = new BufferedReader(new FileReader(System.getProperty("user.dir") + element));
+            String cont = "";
+            String line;
+            while ((line = read.readLine()) != null) {
+                cont = cont + line;
+            }
+            clientOutput.write(("HTTP/1.1 404 Not Found \r\n"
+                    + "Content-Type: application/json; charset=\"utf-8\" \r\n"
+                    + "\r\n"
+                    + cont).getBytes());
+        } catch (IOException e) {
+        }        
+    }  
 }
