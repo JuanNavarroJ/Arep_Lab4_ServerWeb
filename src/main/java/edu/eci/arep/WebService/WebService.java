@@ -22,7 +22,7 @@ import javax.imageio.ImageIO;
 
 public class WebService {
     @Web
-    public static void hmtl(String element, OutputStream clientOutput){
+    public static void html(String element, OutputStream clientOutput){
         try {
             String text = "";
             String temp;
@@ -35,15 +35,11 @@ public class WebService {
                     + "\r\n"
                     + text).getBytes());
         } catch (IOException e) {
-        }
-        
+        }        
     }     
     
     @Web
     public static void jpg(String element, OutputStream clientOutput){
-        System.out.println("Entre en JPG");
-        System.out.println(element);
-        System.out.println(clientOutput);
         try {
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir") + element));
             ByteArrayOutputStream ArrBytes = new ByteArrayOutputStream();
