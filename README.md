@@ -4,7 +4,7 @@
 
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://arep-lab4-ioc.herokuapp.com/WebService/BM4.jpg)
 
-**Enlace:** [`https://arep-lab4-ioc.herokuapp.com/WebService/`](https://arep-lab4-ioc.herokuapp.com/WebService/MG63.jpg)
+**Enlace:** [`https://arep-lab4-ioc.herokuapp.com/WebService/`](https://arep-lab4-ioc.herokuapp.com/WebService/P911.jpg)
 
 Para verificar el funcionamiento tenemos diferentes recursos cargados en el servidor los cuales son:
 
@@ -16,7 +16,13 @@ Para verificar el funcionamiento tenemos diferentes recursos cargados en el serv
 
 ---
 
+### Introducción
 
+En este laboratorio se busca utilizar ya el conocimiento de crear un servidor web el cual pueda resolver solicitudes html, js y jpg. Pero a diferencia del laboratorio anterior ahora buscamos hacer un servidor con Meta protocolos de objetos, Patrón IoC y Reflexión. Por esta razón vamos a hacer un servidor simulando el funcionamiento de Spring usando etiquetas.
+
+Ahora en este laboratorio buscamos mejorar el funcionamiento del servidor usando Meta protocolos de objetos, Patrón IoC y Reflexión. 
+
+![bm](https://user-images.githubusercontent.com/44879884/75122712-75256e00-566e-11ea-9238-5eea6cf98fb9.PNG)
 
 ---
 
