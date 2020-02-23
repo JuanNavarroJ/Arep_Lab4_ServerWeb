@@ -16,11 +16,16 @@ import java.io.OutputStream;
 import javax.imageio.ImageIO;
 
 /**
- *
+ * Clase WebService la cual por medio de etiquetas pemite la ejecucion de sus funcionalidades.
  * @author juan.navarro
  */
 
 public class WebService {
+    /**
+     * Metodo que da un recurso HTML al usuario.
+     * @param element Es la ruta donde se encuentra el recurso.
+     * @param clientOutput Es quien solicita el recurso.
+     */
     @Web
     public static void html(String element, OutputStream clientOutput){
         try {
@@ -36,8 +41,13 @@ public class WebService {
                     + text).getBytes());
         } catch (IOException e) {
         }        
-    }     
+    }   
     
+    /**
+     * Metodo que da un recurso JPG al usuario.
+     * @param element Es la ruta donde se encuentra el recurso.
+     * @param clientOutput Es quien solicita el recurso.
+     */
     @Web
     public static void jpg(String element, OutputStream clientOutput){
         try {
@@ -55,6 +65,11 @@ public class WebService {
         
     }  
     
+    /**
+     * Metodo que da un recurso JS al usuario.
+     * @param element Es la ruta donde se encuentra el recurso.
+     * @param clientOutput Es quien solicita el recurso.
+     */
     @Web
     public static void js(String element, OutputStream clientOutput){
         try {

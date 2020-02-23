@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 
 
 /**
- *
+ * Interface que permite el funcionamiento de la notacion @Web
  * @author juan.navarro
  */
 @Retention(RetentionPolicy.RUNTIME)

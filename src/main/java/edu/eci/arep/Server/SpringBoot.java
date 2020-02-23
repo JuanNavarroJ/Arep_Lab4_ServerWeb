@@ -16,11 +16,19 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- *
+ * Clase que representa un servidor la cual resuelve solicitudes html,jpg,js.
  * @author Juan David
  */
 public class SpringBoot implements Runnable {
 
+    /**
+     * Metodo init que inicia el servicio del servidor.
+     * @throws IOException
+     * @throws ClassNotFoundException
+     * @throws IllegalAccessException
+     * @throws IllegalArgumentException
+     * @throws InvocationTargetException 
+     */
     public void init() throws IOException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         int port = getPort();
         while (true) {
@@ -70,6 +78,10 @@ public class SpringBoot implements Runnable {
         }
     }
 
+    /**
+     * Permite obtener el puerto el cual va a usar el servidor.
+     * @return Retorna el numero del puerto a usar.
+     */
     static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
