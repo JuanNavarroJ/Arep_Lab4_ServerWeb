@@ -12,7 +12,7 @@ Para verificar el funcionamiento tenemos diferentes recursos cargados en el serv
 - [`MG63.jpg`](https://arep-lab4-ioc.herokuapp.com/WebService/MG63.jpg)
 - [`BM4.jpg`](https://arep-lab4-ioc.herokuapp.com/WebService/BM4.jpg)
 - [`P911.jpg`](https://arep-lab4-ioc.herokuapp.com/WebService/P911.jpg)
-- [`Js.js`](https://arep-lab4-ioc.herokuapp.com/WebService/Js.js)
+- [`Js.js`](https://arep-lab4-ioc.herokuapp.com/WebService/js.js)
 
 ---
 
